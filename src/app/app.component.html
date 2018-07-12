@@ -57,7 +57,7 @@
 
 
 
-
+<!-- 
 
 
 <div class="container">
@@ -70,5 +70,83 @@
 </div>
 
 
+ -->
+
+
+<!-- ASSIGNEMENT3 -->
+
+<!-- 
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <hr>
+      <button class="btn btn-primary" (click)="onToggleDetails()">Display Details</button>
+      <p *ngIf="showSecret">Secret Password = tuna</p>
+      <div *ngFor="let logItem of log" [ngStyle]="{backgroundColor:logItem>=5 ? 'blue':'transparent'}" [ngClass]="{'white-text': logItem>=5}">{{ logItem }}</div>
+
+    </div>
+  </div>
+</div> -->
+
+
+<!-- 
+First App of recipes and shopping
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+    <app-recipes></app-recipes>
+    <app-shopping-list></app-shopping-list>
+    </div>
+  </div>
+</div>
+ -->
+
+
+
+
+
+
+<!-- 
+ <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>My Servers</h2>
+      <button class="btn btn-primary" (click)="onAddServer()">Add Server</button>
+      <br /><br />
+      <ul class="list-group">
+        <li 
+        class="list-group-item"
+        *ngFor="let server of servers;let i = index"
+        (click) ="onRemoveServer(i)">{{ server }}</li>
+      </ul>
+
+      <app-servers></app-servers>
+
+    </div>
+  </div>
+</div> -->
+
+
+
+<div class="container">
+    <app-cookpit (serverCreated)="onServerAdded($event)" (blueprintCreated)="onBlueprintAdded($event)"></app-cookpit>
+    <hr>
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-primary" (click)="onChangeFirst()" style="margin:5px;margin-top:-12px;">Change first Element</button>
+    <button class="btn btn-danger" (click)="onDestroyFirst()" style="margin:5px;margin-top:-12px;">Destroy First Element</button>
+    <app-server-element  *ngFor="let serverElement of serverElements"
+    [srvElement]="serverElement"
+    [name]="serverElement.name">
+    <p #contentParagraph>
+      <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+      <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+    </p>
+  </app-server-element>
+  </div>
+</div>
+</div>
+  
 
 
