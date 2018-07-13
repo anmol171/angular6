@@ -19,39 +19,39 @@
 
 
 
-import { Component } from '@angular/core';
+// import { Component } from '@angular/core';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
+// @Component({
+//   selector: 'app-root',
+//   templateUrl: './app.component.html',
+//   styleUrls: ['./app.component.css']
+// })
 
-export class AppComponent {
+// export class AppComponent {
 
-// //ASSIGNEMENT 3
-//  showSecret = false;
-//   log = [];
-//   onToggleDetails(){ 
-//   this.showSecret = !this.showSecret;
-//   this.log.push(this.log.length + 1);
-//     }
+// // //ASSIGNEMENT 3
+// //  showSecret = false;
+// //   log = [];
+// //   onToggleDetails(){ 
+// //   this.showSecret = !this.showSecret;
+// //   this.log.push(this.log.length + 1);
+// //     }
 
 
-// servers = [];
+// // servers = [];
 
-// onAddServer(){
-//   this.servers.push('Another Server');
+// // onAddServer(){
+// //   this.servers.push('Another Server');
+// // }
+
+// // onRemoveServer(id: number) {
+// //   //const position = id+1;
+// //   //const position = id;
+// //   this.servers.splice(position, 1);
+// // }
+
+
 // }
-
-// onRemoveServer(id: number) {
-//   //const position = id+1;
-//   //const position = id;
-//   this.servers.splice(position, 1);
-// }
-
-
-}
 
 
 
@@ -104,6 +104,33 @@ export class AppComponent {
 // }
 
 
+
+
+
+
+
+
+
+//Recipe and shopping
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+
+export class AppComponent {
+
+ loadedFeature = 'recipe';
+
+  onNavigate(feature: string){
+    this.loadedFeature= feature;
+
+  }
+
+}
 
 
 
