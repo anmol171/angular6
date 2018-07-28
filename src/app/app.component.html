@@ -5,12 +5,23 @@
         Only show odd numbers</button>
         <br><br>
         <ul class="list-group">
-          <li class="list-group-item">
-            
+          <div *ngIf="onlyOdd">
+          <li class="list-group-item"
+          [ngClass] ="{odd : odd % 2 !== 0}"
+          [ngStyle] = "{backgroundColor: odd % 2 !== 0 ? 'yellow' : 'green' }"
+          *ngFor = "let oddNumber of oddNumbers">
+          {{ oddNumber }}
           </li>
+          </div>
+          <div *ngIf= "!onlyOdd">
+          <li class="list-group-item"
+          [ngClass] ="{even : even % 2 !== 0}"
+          [ngStyle] = "{backgroundColor: even % 2 !== 0 ? 'blue' : 'red' }"
+          *ngFor = "let evenNumber of evenNumbers">
+          {{ evenNumber }}
+          </li>
+          </div>
         </ul>
-
-
     </div>
   </div>
 </div>
